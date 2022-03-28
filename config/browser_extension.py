@@ -9,6 +9,7 @@ from .model import CheckOutPage, Item
 class Browser(BrowserDefault):
     def __init__(self) -> None:
         super().__init__()
+        self.window.maximize()
 
     def buy(self, amount: int, item: Item) -> None:
         action.buy(self, amount, item)
