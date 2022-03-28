@@ -6,7 +6,7 @@ from config.item_page import ITEM_PAGE
 from config.model import CheckOutPage, Item
 
 
-def buy(browser: Browser, amount: int, item: Item):
+def add_to_cart(browser: Browser, amount: int, item: Item):
     browser.open.url(item.url)
     for _ in range(amount - 1):  # The item count always starts at 1.
         browser.click.button(ITEM_PAGE.incremental_increase_amount_button)

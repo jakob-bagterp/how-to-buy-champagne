@@ -11,8 +11,8 @@ class Browser(BrowserDefault):
         super().__init__()
         self.window.maximize()
 
-    def buy(self, amount: int, item: Item) -> None:
-        action.buy(self, amount, item)
+    def add_to_cart(self, amount: int, item: Item) -> None:
+        action.add_to_cart(self, amount, item)
 
     def check_out(self, check_out_page: CheckOutPage = CHECK_OUT_PAGE_HONEST_GRAPES_CO_UK) -> None:
         action.check_out(self, check_out_page)
