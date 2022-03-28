@@ -10,10 +10,11 @@ def buy(browser: Browser, amount: int, item: Item):
     browser.open.url(item.url)
     for _ in range(amount - 1):  # The item count always starts at 1.
         browser.click.button(ITEM_PAGE.incremental_increase_amount_button)
-        time.sleep(0.2)
+        time.sleep(0.1)
     browser.click.button(ITEM_PAGE.add_to_cart_button)
     if ITEM_PAGE.confirmation_modal:
         browser.wait.for_element(ITEM_PAGE.confirmation_modal)
+        time.sleep(1)
 
 
 def check_out(browser: Browser, check_out_page: CheckOutPage):
